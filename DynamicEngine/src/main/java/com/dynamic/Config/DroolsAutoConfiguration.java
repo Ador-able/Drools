@@ -1,6 +1,6 @@
-package org.drools.example.api.dynamic.Config;
+package com.dynamic.Config;
 
-import org.drools.example.api.dynamic.Util.KieUtils;
+import com.dynamic.Util.KieUtils;
 import org.kie.api.KieBase;
 import org.kie.api.KieServices;
 import org.kie.api.builder.KieBuilder;

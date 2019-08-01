@@ -1,4 +1,4 @@
-package org.drools.example.api.dynamic;
+package com.dynamic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

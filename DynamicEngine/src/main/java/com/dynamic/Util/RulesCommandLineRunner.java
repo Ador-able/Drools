@@ -1,6 +1,6 @@
-package org.drools.example.api.dynamic.Util;
+package com.dynamic.Util;
 
-import org.drools.example.api.dynamic.Service.ReloadDroolsRules;
+import com.dynamic.Service.ReloadDroolsRules;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

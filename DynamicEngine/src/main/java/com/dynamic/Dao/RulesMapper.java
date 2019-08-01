@@ -1,4 +1,4 @@
-package org.drools.example.api.dynamic.Dao;
+package com.dynamic.Dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.drools.example.api.model.Rules;

@@ -1,4 +1,4 @@
-package org.drools.example.api.dynamic.Util;
+package com.dynamic.Util;
 
 import org.kie.api.builder.KieFileSystem;
 import org.kie.api.runtime.KieContainer;

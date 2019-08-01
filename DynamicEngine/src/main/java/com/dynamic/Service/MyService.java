@@ -1,4 +1,4 @@
-package org.drools.example.api.dynamic.Service;
+package com.dynamic.Service;
 
 import org.drools.core.ClassObjectFilter;
 import org.drools.example.api.model.Message;

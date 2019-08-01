@@ -1,4 +1,4 @@
-package org.drools.example.api.dynamic.Config;
+package com.dynamic.Config;
 
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

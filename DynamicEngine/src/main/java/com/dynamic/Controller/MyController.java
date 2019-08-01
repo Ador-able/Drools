@@ -1,7 +1,7 @@
-package org.drools.example.api.dynamic.Controller;
+package com.dynamic.Controller;
 
-import org.drools.example.api.dynamic.Service.MyService;
-import org.drools.example.api.dynamic.Service.ReloadDroolsRules;
+import com.dynamic.Service.ReloadDroolsRules;
+import com.dynamic.Service.MyService;
 import org.drools.example.api.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

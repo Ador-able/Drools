@@ -1,8 +1,8 @@
-package org.drools.example.api.dynamic.Service;
+package com.dynamic.Service;
 
-import org.drools.example.api.dynamic.Dao.RulesMapper;
+import com.dynamic.Dao.RulesMapper;
 import org.drools.example.api.model.Rules;
-import org.drools.example.api.dynamic.Util.KieUtils;
+import com.dynamic.Util.KieUtils;
 import org.kie.api.KieServices;
 import org.kie.api.builder.KieBuilder;
 import org.kie.api.builder.KieFileSystem;
