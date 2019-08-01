@@ -1,0 +1,21 @@
+emtomcat:
+  tomcat:
+    connection-timeout: 10000
+    acceptor-thread-count: 4
+    min-spare-threads: 100
+    max-spare-threads: 300
+    accept-count: 200
+    max-connections: 800
+    max-threads: 500
+    protocol: org.apache.coyote.http11.Http11Nio2Protocol
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: org.drools.example.api.dynamic.Model
