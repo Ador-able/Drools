@@ -1,7 +1,7 @@
-package org.drools.example.api.model;
+package com.dynamic.Model;
 
 /**
- * @author 雷新宇
+ * @author lxy
  * @version 1.0
  * @date 2019/7/31 14:59
  */

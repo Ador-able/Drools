@@ -3,7 +3,7 @@ package com.dynamic.Config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author 雷新宇
+ * @author lxy
  * @version 1.0
  * @date 2019/7/28 14:27
  */

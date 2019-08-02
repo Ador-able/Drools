@@ -1,23 +1,20 @@
 package com.dynamic.Util;
 
-import com.dynamic.Service.ReloadDroolsRules;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 /**
- * @author 雷新宇
+ * @author lxy
  * @version 1.0
  * @date 2019/7/31 14:45
  */
-@Component
+//@Component
 public class RulesCommandLineRunner implements CommandLineRunner {
 
-    @Autowired
-    private ReloadDroolsRules reloadDroolsRules;
+//    @Autowired
+//    private ReloadDroolsRules reloadDroolsRules;
 
     @Override
     public void run(String... args) throws Exception {
-        reloadDroolsRules.reloadAll();
+        //reloadDroolsRules.reloadAll();
     }
 }

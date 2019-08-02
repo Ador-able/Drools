@@ -1,5 +1,8 @@
 package com.dynamic.Service;
 
+import com.dynamic.Util.CustomCL;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.drools.core.ClassObjectFilter;
 import org.drools.example.api.model.Message;
 import org.kie.api.KieServices;
@@ -10,8 +13,11 @@ import org.kie.api.runtime.KieSession;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
 /**
- * @author 雷新宇
+ * @author lxy
  * @version 1.0
  * @date 2019/7/27 16:47
  */
@@ -53,4 +59,22 @@ public class MyService {
 		return result;
 	}
 
+	public void run(JsonNode jsonNode)
+	{
+		JsonNode rule_no = jsonNode.findValue("rule_NO");
+		String model = rule_no.asText();
+		ObjectMapper mapper = new ObjectMapper();
+		CustomCL customCL = new CustomCL("E:\\IdeaProjects\\Drools\\Model\\target\\classes\\org\\drools\\example\\api\\model", new String[]{model});
+		try {
+			Class<?> aClass = customCL.loadClass("Hello");
+			//获取构造函数类的对象
+			Constructor<?>[] constructors = aClass.getConstructors();
+			// 使用构造器对象的newInstance方法初始化对象
+			Object obj = constructors[0].newInstance("你好");
+			Method m = obj.getClass().getMethod("getInfo");
+			System.out.println(m.invoke(obj));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -1,16 +1,15 @@
 package com.dynamic.Dao;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.drools.example.api.model.Rules;
+import com.dynamic.Model.Rules;
 
 import java.util.List;
 
 /**
- * @author 雷新宇
+ * @author lxy
  * @version 1.0
  * @date 2019/7/31 14:54
  */
-@Mapper
+//@Mapper
 public interface RulesMapper {
     int deleteByPrimaryKey(Integer id);
 

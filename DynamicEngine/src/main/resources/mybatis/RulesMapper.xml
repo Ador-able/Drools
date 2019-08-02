@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huanmeiqi.drools.demo.boot.mapper.RulesMapper">
 
-    <resultMap id="BaseResultMap" type="org.drools.example.api.dynamic.Model">
+    <resultMap id="BaseResultMap" type="com.dynamic.Model.Rules">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="content" jdbcType="LONGVARCHAR" property="content"/>

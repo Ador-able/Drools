@@ -5,7 +5,7 @@ import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
 /**
- * @author 雷新宇
+ * @author lxy
  * @version 1.0
  * @date 2019/7/31 14:33
  */

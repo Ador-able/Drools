@@ -18,4 +18,4 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mybatis/*.xml
-  type-aliases-package: org.drools.example.api.dynamic.Model
+  type-aliases-package: com.dynamic.Model
