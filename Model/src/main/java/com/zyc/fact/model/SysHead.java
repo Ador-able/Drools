@@ -67,7 +67,6 @@ public class SysHead {
     }
 
 
-
     public String getRetMsg() {
         return retMsg;
     }

@@ -32,7 +32,6 @@ public class DoController {
 
     @GetMapping("/zyc/{sysid}")
     public Map<String,Object>  dohander2(@RequestBody Map<String,Object> map,@PathVariable("sysid") String sysid)  {
-
         logger.info("开始触发交易");
         System.out.println("开始触发交易");
         Map<String,Object> Pheader=  ( Map<String,Object>)map.get(this.PHEAD);

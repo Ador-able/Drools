@@ -3,6 +3,7 @@ package rules.cms
 import com.zyc.fact.model.SysHead;
 import com.zyc.fact.model.CmsCheckDataResult;
 import com.zyc.fact.model.CmsCheckData;
+import com.dynamic.Model.response.CommonCode;
 
 rule "cmscheckdata"
 
@@ -14,8 +15,7 @@ then
     $result.setFalg(false);
     $result.setGrade("10");
     $result.setGreditLevel("A");
-    $sysHead.setRetCode("0000");
-    $sysHead.setRetMsg("处理成功");
+    CommonCode.setResultCode(CommonCode.SUCCESS,$sysHead);
     System.out.println( "规则触发了："+$sysHead.getRuleNo() );
     System.out.println("请求的金额为："+$cms.getCreditAmt());
 end
