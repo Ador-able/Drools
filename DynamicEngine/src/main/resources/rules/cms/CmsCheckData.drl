@@ -1,0 +1,37 @@
+package rules.cms
+
+import com.zyc.fact.model.SysHead;
+import com.zyc.fact.model.CmsCheckDataResult;
+import com.zyc.fact.model.CmsCheckData;
+
+rule "cmscheckdata"
+
+when
+     $sysHead : SysHead();
+     $cms : CmsCheckData(creditAmt>=50000);
+     $result : CmsCheckDataResult();
+then
+    $result.setFalg(false);
+    $result.setGrade("10");
+    $result.setGreditLevel("A");
+    $sysHead.setRetCode("0000");
+    $sysHead.setRetMsg("处理成功");
+    System.out.println( "规则触发了："+$sysHead.getRuleNo() );
+    System.out.println("请求的金额为："+$cms.getCreditAmt());
+end
+
+rule "cmscheckdata2"
+
+when
+     $sysHead : SysHead();
+     $cms : CmsCheckData(creditAmt<50000);
+     $result : CmsCheckDataResult();
+then
+    $result.setFalg(false);
+    $result.setGrade("5");
+    $result.setGreditLevel("B");
+    $sysHead.setRetCode("0000");
+    $sysHead.setRetMsg("处理成功");
+    System.out.println( "规则触发了："+$sysHead.getRuleNo() );
+    System.out.println("请求的金额为："+$cms.getCreditAmt());
+end
