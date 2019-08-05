@@ -27,12 +27,13 @@ public class CustomCL extends ClassLoader {
     private void loadAllClass(String[] clazns) {
         if (clazns == null) return;
         Arrays.stream(clazns).forEach(str -> {
-            loadDirectly(str);
+            findClass(str);
             dynaclazns.add(str);
         });
     }
 
-    private Class loadDirectly(String name) {
+    @Override
+    protected Class findClass(String name) {
         Class cls = null;
         StringBuffer dirpath = new StringBuffer(basedir);
         String classname = name.replace('.', File.separatorChar) + ".class";
@@ -63,6 +64,7 @@ public class CustomCL extends ClassLoader {
         Class cls = null;
         cls = findLoadedClass(name);//查看是否存在已装入的类
         if (!this.dynaclazns.contains(name) && cls == null)
+            //不属于该类加载的交给系统加载器实现
             cls = getSystemClassLoader().loadClass(name);
         if (cls == null)
             throw new ClassNotFoundException(name);
@@ -70,4 +72,21 @@ public class CustomCL extends ClassLoader {
             resolveClass(cls);
         return cls;
     }
+
+//    public static void main(String[] args) {
+//        String model = "Hello";
+//        CustomCL customCL = new CustomCL("E:\\IdeaProjects\\Drools\\Model\\target\\classes\\org\\drools\\example\\api\\model", new String[]{model});
+//        try {
+//            Class<?> aClass = customCL.loadClass("Hello",false);
+//            //获取构造函数类的对象
+//            Constructor<?>[] constructors = aClass.getConstructors();
+//            // 使用构造器对象的newInstance方法初始化对象
+//            Object obj = constructors[0].newInstance();
+//            Method m = obj.getClass().getMethod("getI");
+//            System.out.println(m.invoke(obj));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+
 }

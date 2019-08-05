@@ -30,8 +30,7 @@ then
     $result.setFalg(false);
     $result.setGrade("5");
     $result.setGreditLevel("B");
-    $sysHead.setRetCode("0000");
-    $sysHead.setRetMsg("处理成功");
+    CommonCode.setResultCode(CommonCode.SUCCESS,$sysHead);
     System.out.println( "规则触发了："+$sysHead.getRuleNo() );
     System.out.println("请求的金额为："+$cms.getCreditAmt());
 end

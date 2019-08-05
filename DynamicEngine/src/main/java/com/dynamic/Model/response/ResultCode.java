@@ -5,7 +5,7 @@ package com.dynamic.Model.response;
  */
 public interface ResultCode {
     //操作代码
-    int code();
+    String code();
     //提示信息
     String message();
 }

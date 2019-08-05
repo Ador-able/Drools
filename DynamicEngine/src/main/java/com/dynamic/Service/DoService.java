@@ -1,5 +1,6 @@
 package com.dynamic.Service;
 
+import com.dynamic.Model.response.CommonCode;
 import com.dynamic.Util.KieCacheUtils;
 import com.dynamic.Util.KieUtils;
 import com.zyc.fact.model.SysHead;
@@ -33,9 +34,11 @@ public class DoService {
         kieSession.insert(questBody);
         kieSession.insert(resposeBody);
         int ruleFiredCount = kieSession.fireAllRules();
-
+        if(ruleFiredCount==0)
+        {
+            CommonCode.setResultCode(CommonCode.NO_RULE, sysHead);
+        }
         logger.info("触发了" + ruleFiredCount + "条规则");
-
         kieSession.dispose();
     }
 }

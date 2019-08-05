@@ -10,6 +10,8 @@ import org.kie.api.builder.KieScanner;
 import org.kie.api.builder.ReleaseId;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -24,6 +26,7 @@ import java.lang.reflect.Method;
 @Service
 public class MyService {
 
+	private static Logger logger= LoggerFactory.getLogger(MyService.class);
 	private KieContainer kContainer;
 
 	@PostConstruct
@@ -65,6 +68,7 @@ public class MyService {
 		String model = rule_no.asText();
 		ObjectMapper mapper = new ObjectMapper();
 		CustomCL customCL = new CustomCL("E:\\IdeaProjects\\Drools\\Model\\target\\classes\\org\\drools\\example\\api\\model", new String[]{model});
+		logger.info(customCL.getParent().toString());
 		try {
 			Class<?> aClass = customCL.loadClass("Hello");
 			//获取构造函数类的对象
