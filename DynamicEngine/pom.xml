@@ -14,7 +14,7 @@
 
     <properties>
         <spring.version>2.1.3.RELEASE</spring.version>
-        <jackjson.version>2.9.8</jackjson.version>
+        <jackjson.version>2.12.1</jackjson.version>
     </properties>
     <dependencies>
         <dependency>
